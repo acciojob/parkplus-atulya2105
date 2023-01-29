@@ -39,6 +39,10 @@ public class ParkingLot {
         return Id;
     }
 
+    public ParkingLot(List<Spot> spotList) {
+        this.spotList = spotList;
+    }
+
     public void setId(int parkingLotId) {
         this.Id = parkingLotId;
     }
