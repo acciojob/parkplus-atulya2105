@@ -5,6 +5,7 @@ import com.driver.model.ParkingLot;
 import com.driver.model.Spot;
 import com.driver.model.SpotType;
 import com.driver.repository.ParkingLotRepository;
+import com.driver.repository.PaymentRepository;
 import com.driver.repository.SpotRepository;
 import com.driver.services.ParkingLotService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ public class ParkingLotServiceImpl implements ParkingLotService {
     ParkingLotRepository parkingLotRepository1;
     @Autowired
     SpotRepository spotRepository1;
+    @Autowired
+    private PaymentRepository paymentRepository;
+
     @Override
     public ParkingLot addParkingLot(String name, String address) {
 
@@ -47,10 +51,6 @@ public class ParkingLotServiceImpl implements ParkingLotService {
         spot.setPricePerHour(pricePerHour);
         spot.setNumberOfWheels(numberOfWheels);
 
-//        List<Spot> list = parkingLot.getSpotList();
-//        list.add(spot);
-//        parkingLot.setSpotList(list);
-//        parkingLotRepository1.save(parkingLot);
         spotRepository1.save(spot);
 
         return spot;
@@ -61,11 +61,10 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 
         Spot spot = spotRepository1.findById(spotId).get();
         ParkingLot parkingLot = spot.getParkingLot();
-        parkingLot.getSpotList().remove(spotId);
+        parkingLot.getSpotList().remove(parkingLot);
         spotRepository1.deleteById(spotId);
 
-//        parkingLotRepository1.save(parkingLot);
-
+        parkingLotRepository1.save(parkingLot);
     }
 
     @Override
