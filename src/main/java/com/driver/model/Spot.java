@@ -74,7 +74,7 @@ public class Spot {
         SpotId = spotId;
     }
 
-    public boolean isOccupied() {
+    public boolean getOccupied() {
         return occupied;
     }
 
