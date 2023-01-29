@@ -25,7 +25,7 @@ public class PaymentServiceImpl implements PaymentService {
 
         Reservation reservation = reservationRepository2.findById(reservationId).get();
         int bill = 0;
-        int hours = reservation.getNumberOfHour();
+        int hours = reservation.getNumberOfHours();
         Spot spot = reservation.getSpot();
         int price = spot.getPricePerHour();
         bill = hours*price;

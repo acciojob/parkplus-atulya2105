@@ -48,7 +48,7 @@ public class ReservationServiceImpl implements ReservationService {
         spot.setOccupied(true);
         reservation.setSpot(spot);
         spot.setParkingLot(parkingLot);
-        reservation.setNumberOfHour(timeInHours);
+        reservation.setNumberOfHours(timeInHours);
         User user = userRepository3.findById(userId).get();
         reservation.setUser(user);
         spotRepository3.save(spot);
