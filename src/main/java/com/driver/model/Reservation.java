@@ -8,7 +8,7 @@ public class Reservation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  int reservationId;
+    private  int Id;
 
     private  int numberOfHour ;
     @ManyToOne
@@ -34,12 +34,12 @@ public class Reservation {
         this.numberOfHour = numberOfHour;
     }
 
-    public int getReservationId() {
-        return reservationId;
+    public int getId() {
+        return Id;
     }
 
-    public void setReservationId(int reservationId) {
-        this.reservationId = reservationId;
+    public void setId(int reservationId) {
+        this.Id = reservationId;
     }
 
     public int getNumberOfHour() {

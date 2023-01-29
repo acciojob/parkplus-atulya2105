@@ -11,7 +11,7 @@ public class Spot {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    private  int SpotId;
+    private  int Id;
 
     private int numberOfWheels;
     private int pricePerHour;
@@ -66,12 +66,12 @@ public class Spot {
         this.spotType = spotType;
     }
 
-    public int getSpotId() {
-        return SpotId;
+    public int getId() {
+        return Id;
     }
 
-    public void setSpotId(int spotId) {
-        SpotId = spotId;
+    public void setId(int spotId) {
+        Id = spotId;
     }
 
     public boolean getOccupied() {

@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int paymentId;
+    private int Id;
 
     private boolean paymentCompleted;
     private PaymentMode paymentMode;
@@ -20,20 +20,20 @@ public class Payment {
     private Reservation reservation;
 
     public Payment(int paymentId, boolean paymentCompleted, PaymentMode paymentMode) {
-        this.paymentId = paymentId;
+        this.Id = paymentId;
         this.paymentCompleted = paymentCompleted;
         this.paymentMode = paymentMode;
     }
 
-    public int getPaymentId() {
-        return paymentId;
+    public int getId() {
+        return Id;
     }
 
     public Payment() {
     }
 
-    public void setPaymentId(int paymentId) {
-        this.paymentId = paymentId;
+    public void setId(int paymentId) {
+        this.Id = paymentId;
     }
 
     public boolean isPaymentCompleted() {
