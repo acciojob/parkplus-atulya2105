@@ -13,6 +13,8 @@ public class PaymentController {
 	@Autowired
     PaymentServiceImpl paymentService;
 
+
+
     @PostMapping("/pay")
     public Payment pay(@RequestParam Integer reservationId, @RequestParam Integer amountSent, @RequestParam String mode) throws Exception{
         //Attempt a payment of amountSent for reservationId using the given mode ("cASh", "card", or "upi")
