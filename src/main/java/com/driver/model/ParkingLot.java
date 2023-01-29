@@ -35,11 +35,11 @@ public class ParkingLot {
         this.address = address;
     }
 
-    public int getParkingLotId() {
+    public int getId() {
         return Id;
     }
 
-    public void setParkingLotId(int parkingLotId) {
+    public void setId(int parkingLotId) {
         this.Id = parkingLotId;
     }
 
